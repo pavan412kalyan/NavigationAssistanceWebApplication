@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+
+</head>
+<body>
+<h1>Select the WareHouse to display Genral stores near me</h1>
+<form class="form-inline" method="POST" action="{{ url_for('shops') }}">
+
+<select name=warehouse> 
+ {% for wh in warehouse %}
+ <option value={{wh}} >{{wh}}</option>
+{% endfor %}
+
+
+</select>
+<br>
+<h1>Check</h1>
+<input type="radio" name="item" value=0 checked> All
+<input type="radio" name="item" value="item_0"> item_0
+<input type="radio" name="item" value="item_1"> item_1
+<input type="radio" name="item" value="item_2" > item_2
+<input type="radio" name="item" value="item_3" > item_3
+<input type="radio" name="item" value="item_4" > item_4
+<input type="radio" name="item" value="item_5" > item_5
+<input type="radio" name="item" value="item_6" > item_6
+<input type="radio" name="item" value="item_7" > item_7
+<input type="radio" name="item" value="item_8" > item_8
+<input type="radio" name="item" value="item_9" > item_9
+<input type="radio" name="item" value="item_10" > item_10<br>
+<input type="radio" name="item" value="item_11" > item_11
+<input type="radio" name="item" value="item_12" > item_12
+<input type="radio" name="item" value="item_13" > item_13
+<input type="radio" name="item" value="item_14" > item_14
+<input type="radio" name="item" value="item_15" > item_15
+<input type="radio" name="item" value="item_16" > item_16
+<input type="radio" name="item" value="item_17" > item_17
+<br>
+
+<h1>Select Items less than</h1>
+
+<select name=threshold>
+  <option value=0 selected>0</option>
+ <option value=5  >5</option>
+ <option value=10>10</option>
+ <option value=15>15</option>
+ 
+ </select>
+
+
+
+<h1>Select distance</h1>
+
+
+<select name=distance>
+   <option value=70 selected >70</option>
+
+  <option value=30  >30</option>
+ <option value=20  >20</option>
+ <option value=15>15</option>
+ <option value=10>10</option>
+ <option value=5>5</option>
+
+</select>
+
+<button type="submit" >Go</button>
+<p><a href="{{ url_for('markers') }}" target="_blank">Show them in GoogleMApps</a></p>
+
+</form>
+
+<td><a href="{{ url_for('travel') }}" target="_blank">Start Travelling</a> </td>
+
+
+<h1>from  {{from_wh}}</h1>
+<table  id='customers'>
+
+<tr>
+    <th>Maps</th>
+
+    <th>Sellers</th>
+    <th>Distance</th>
+    <th>Address</th>
+  </tr>
+
+{% for shop in shops %}
+
+<tr>
+<td><a href="{{ url_for('route_shops',lats=shop[1],lng=shop[2])}}" target="_blank">open</a> </td>
+
+
+<td>{{shop[0]}} </td>
+<td>{{shop[5]}} kms </td>
+
+<td>{{shop[3]}} </td>
+
+
+</tr>
+{% endfor %}
+
+</table>
+
+
+
+</body>
+>

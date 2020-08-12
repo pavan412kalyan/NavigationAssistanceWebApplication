@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Seller Section</title>
+    <style>
+   /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    
+    
+      .row{
+        
+       background-color:gainsboro;
+     display: inline-block;
+   
+    margin: 10px;
+    border: 3px solid black;     }
+    
+  
+      
+
+
+
+
+
+
+table {
+  border-collapse: collapse;
+  width: 20%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+</style>
+
+</head>
+<body>
+
+<form class="form-inline" method="POST" action="{{ url_for('warehouse') }}">
+Enter Client ID<input type=text name="client_id" value={{store_values[0]}}>
+<br>
+<div class="row">
+
+<h3> Block Some warehouses </h3>
+<select name="block" multiple >
+ {% for w in wh_values  %}
+
+ <option value={{w[1]}}>{{w[0]}}</option>
+ 
+ {% endfor %}
+</select>
+</div>
+<input type=submit ></input>
+
+</form>
+
+
+<!--
+<div class=row>
+<table>
+<th>Warehouses</th>
+ {% for wh in stores  %}
+<tr>
+<td>
+{{wh[0]}}
+</td>
+</tr>
+
+{% endfor %}
+</table>
+
+</div>
+-->
+
+
+
+
+
+
+
+<div class=row>
+
+
+<table>
+<tr>
+<td>Name</td>
+<td><h3>{{store_details[0]}}</h3></td>
+</tr>
+
+<tr>
+<td>Lats</td>
+<td>{{store_details[1]}}</td>
+</tr>
+
+<tr>
+<td>Longs</td>
+<td>{{store_details[2]}}</td>
+</tr>
+
+<tr>
+<td>Address</td>
+<td>{{store_details[3]}}</td>
+</tr>
+
+</table>
+
+<table>
+<tr>
+<td>ID</td>
+
+<td>{{store_values[0]}}</td>
+
+</tr>
+{% set x = 11 %}
+
+<!----->
+
+<tr>
+<td>Item_0</td>
+{% if store_values[1]|int  < x %}
+<td style="color: red;">{{store_values[1]}}</td>
+    {% else %}
+<td style="color: green;">{{store_values[1]}}</td>
+   {% endif %}
+</tr>
+
+<!----->
+
+<!-->
+
+<tr>
+<td>Item_1</td>
+{% if store_values[2]|int  < x %}
+<td style="color: red;">{{store_values[2]}}</td>
+    {% else %}
+<td style="color: green;">{{store_values[2]}}</td>
+   {% endif %}
+</tr>
+
+<tr>
+<td>Item_2</td>
+{% if store_values[3]|int  < x %}
+<td style="color: red;">{{store_values[3]}}</td>
+    {% else %}
+<td style="color: green;">{{store_values[3]}}</td>
+   {% endif %}
+</tr>
+
+
+<tr>
+<td>Item_3</td>
+{% if store_values[4]|int  < x %}
+<td style="color: red;">{{store_values[4]}}</td>
+    {% else %}
+<td style="color: green;">{{store_values[4]}}</td>
+   {% endif %}
+</tr>
+
+
+<tr>
+<td>Item_4</td>
+{% if store_values[5]|int  < x %}
+<td style="color: red;">{{store_values[5]}}</td>
+    {% else %}
+<td style="color: green;">{{store_values[5]}}</td>
+   {% endif %}
+</tr>
+
+
+<tr>
+<td>Item_5</td>
+{% if store_values[6]|int  < x %}
+<td style="color: red;">{{store_values[6]}}</td>
+    {% else %}
+<td style="color: green;">{{store_values[6]}}</td>
+   {% endif %}
+</tr>
+
+
+<tr>
+<td>Item_6</td>
+{% if store_values[7]|int  < x %}
+<td style="color: red;">{{store_values[7]}}</td>
+    {% else %}
+<td style="color: green;">{{store_values[7]}}</td>
+   {% endif %}
+</tr>
+
+
+<tr>
+<td>Item_8</td>
+{% if store_values[9]|int  < x %}
+<td style="color: red;">{{store_values[9]}}</td>
+    {% else %}
+<td style="color: green;">{{store_values[9]}}</td>
+   {% endif %}
+</tr>
+
+
+<tr>
+<td>Item_10</td>
+{% if store_values[11]|int  < x %}
+<td style="color: red;">{{store_values[11]}}</td>
+    {% else %}
+<td style="color: green;">{{store_values[11]}}</td>
+   {% endif %}
+</tr>
+
+
+<tr>
+<td>Item_11</td>
+{% if store_values[12]|int  < x %}
+<td style="color: red;">{{store_values[12]}}</td>
+    {% else %}
+<td style="color: green;">{{store_values[12]}}</td>
+   {% endif %}
+</tr>
+
+
+<tr>
+<td>Item_12</td>
+{% if store_values[13]|int  < x %}
+<td style="color: red;">{{store_values[13]}}</td>
+    {% else %}
+<td style="color: green;">{{store_values[13]}}</td>
+   {% endif %}
+</tr>
+
+
+<tr>
+<td>Item_13</td>
+{% if store_values[14]|int  < x %}
+<td style="color: red;">{{store_values[14]}}</td>
+    {% else %}
+<td style="color: green;">{{store_values[14]}}</td>
+   {% endif %}
+</tr>
+
+
+<tr>
+<td>Item_14</td>
+{% if store_values[15]|int  < x %}
+<td style="color: red;">{{store_values[15]}}</td>
+    {% else %}
+<td style="color: green;">{{store_values[15]}}</td>
+   {% endif %}
+</tr>
+
+
+<tr>
+<td>Item_15</td>
+{% if store_values[16]|int  < x %}
+<td style="color: red;">{{store_values[16]}}</td>
+    {% else %}
+<td style="color: green;">{{store_values[16]}}</td>
+   {% endif %}
+</tr>
+
+
+<tr>
+<td>Item_16</td>
+{% if store_values[17]|int  < x %}
+<td style="color: red;">{{store_values[17]}}</td>
+    {% else %}
+<td style="color: green;">{{store_values[17]}}</td>
+   {% endif %}
+</tr>
+
+
+<tr>
+<td>Item_17</td>
+{% if store_values[18]|int  < x %}
+<td style="color: red;">{{store_values[18]}}</td>
+    {% else %}
+<td style="color: green;">{{store_values[18]}}</td>
+   {% endif %}
+</tr>
+
+
+</table>
+
+</div>
+
+
+
+<!----------->
+<div class="">
+<table>
+
+<tr>
+<th>WareHouse Name </th>
+<th> item for sale >10 </th>
+<th>distance </th>
+<th>Store_values </th>
+<th>Warehouse_values </th>
+<th>Navigate </th>
+
+
+
+</tr>
+ {% for m in checked  %}
+<tr>     
+    <td>{{m[0][3]}}</td> <!-- name m[0]nearest in all itmes-->
+    <td>{{m[0][4]}}</td> <!--  item name        nearest in all itmes-->
+    <td>{{m[0][0]}}</td> <!-- distance nearest in all itmes-->
+        <td>{{m[0][9]}}</td> <!-- store values nearest in all itmes-->
+          <td>{{m[0][10]}}</td> <!--   Warehouse_values   nearest in all itmes-->
+
+
+            <td><a href="{{ url_for('route_warehouse',o_lats=m[0][5],o_lng=m[0][6],d_lats=m[0][7],d_lng=m[0][8])}}" target="_blank">Travel</a> </td>
+
+</tr>
+{% endfor %}
+
+</table>
+</div>
+<!----------->
+
+
+<!----------->
+
+<!----------->
+<div class="row">
+
+
+ {% for m in checked  %}
+ <table>
+ <tr>
+<th>WareHouse Name </th>
+<th> item for sale >10 </th>
+<th> four Nearest distance warehouse </th>
+<th>Store_values </th>
+<th>Warehouse_values </th>
+<th>Navigate </th>
+
+</tr>
+
+<tr>     
+    <td>{{m[0][3]}}</td> <!--m[0]nearest in all itmes-->
+    <td>{{m[0][4]}}</td> <!--nearest in all itmes-->
+    <td>{{m[0][0]}}</td> <!--nearest in all itmes-->
+      <td>{{m[0][9]}}</td> <!--nearest in all itmes-->
+   <td>{{m[0][10]}}</td>
+        <td><a href="{{ url_for('route_warehouse',o_lats=m[0][5],o_lng=m[0][6],d_lats=m[0][7],d_lng=m[0][8])}}" target="_blank">Travel</a> </td>
+
+</tr>
+
+<tr>     
+    <td>{{m[1][3]}}</td> <!--m[0]nearest in all itmes-->
+    <td>{{m[1][4]}}</td> <!--nearest in all itmes-->
+    <td>{{m[1][0]}}</td> <!--nearest in all itmes-->
+      <td>{{m[1][9]}}</td> <!--nearest in all itmes-->
+   <td>{{m[1][10]}}</td>
+        <td><a href="{{ url_for('route_warehouse',o_lats=m[0][5],o_lng=m[0][6],d_lats=m[0][7],d_lng=m[0][8])}}" target="_blank">Travel</a> </td>
+
+</tr>
+<tr>     
+    <td>{{m[2][3]}}</td> <!--m[0]nearest in all itmes-->
+    <td>{{m[2][4]}}</td> <!--nearest in all itmes-->
+    <td>{{m[2][0]}}</td> <!--nearest in all itmes-->
+      <td>{{m[2][9]}}</td> <!--nearest in all itmes-->
+   <td>{{m[2][10]}}</td>
+        <td><a href="{{ url_for('route_warehouse',o_lats=m[0][5],o_lng=m[0][6],d_lats=m[0][7],d_lng=m[0][8])}}" target="_blank">Travel</a> </td>
+      
+</tr>
+<tr>     
+    <td>{{m[3][3]}}</td> <!--m[0]nearest in all itmes-->
+    <td>{{m[3][4]}}</td> <!--nearest in all itmes-->
+    <td>{{m[3][0]}}</td> <!--nearest in all itmes-->
+      <td>{{m[3][9]}}</td> <!--nearest in all itmes-->
+   <td>{{m[3][10]}}</td>
+        <td><a href="{{ url_for('route_warehouse',o_lats=m[0][5],o_lng=m[0][6],d_lats=m[0][7],d_lng=m[0][8])}}" target="_blank">Travel</a> </td>
+
+</tr>
+</table>
+
+{% endfor %}
+
+</div>
+
+<!----------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=row>
+<table>
+<tr>
+<th>Warehouses_stock</th>
+<th>item_0</th>
+<th>item_1</th>
+<th>item_2</th>
+<th>item_3</th>
+<th>item_4</th>
+<th>item_5</th>
+<th>item_6</th>
+<th>item_7</th>
+<th>item_8</th>
+<th>item_9</th>
+<th>item_10</th>
+<th>item_11</th>
+<th>item_12</th>
+<th>item_13</th>
+<th>item_14</th>
+<th>item_15</th>
+<th>item_16</th>
+<th>item_17</th>
+</tr>
+ <tr>
+ {% for wh in wh_values  %}
+
+
+<td>{{wh[0]}}</td>
+<td>{{wh[2]}}</td>
+<td>{{wh[3]}}</td>
+<td>{{wh[4]}}</td>
+<td>{{wh[5]}}</td>
+<td>{{wh[6]}}</td>
+<td>{{wh[7]}}</td>
+<td>{{wh[8]}}</td>
+<td>{{wh[9]}}</td>
+<td>{{wh[10]}}</td>
+<td>{{wh[11]}}</td>
+<td>{{wh[12]}}</td>
+<td>{{wh[13]}}</td>
+<td>{{wh[14]}}</td>
+<td>{{wh[15]}}</td>
+<td>{{wh[16]}}</td>
+<td>{{wh[17]}}</td>
+<td>{{wh[18]}}</td>
+<td>{{wh[19]}}</td>
+
+
+</tr>
+
+{% endfor %}
+</table>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---====================================->
+<!--
+{% set x = 10 %}
+
+<!----->
+ <script>
+ function distance(lat1, lon1, lat2, lon2) {
+  var p = 0.017453292519943295;    // Math.PI / 180
+  var c = Math.cos;
+  var a = 0.5 - c((lat2 - lat1) * p)/2 + 
+          c(lat1 * p) * c(lat2 * p) * 
+          (1 - c((lon2 - lon1) * p))/2;
+
+  return 12742 * Math.asin(Math.sqrt(a)); // 2 * R; R = 6371 km
+  }
+var near =[]  
+
+{% if store_values[1]|int < x %}
+
+{% for q in wh_values  %}
+ 
+{% if q[2]|int > x %}
+
+var c = distance({{store_details[1]|float}}, {{store_details[2]|float}},{{q[20]|float}},{{q[21]|float}}); 
+near.push(c)
+
+{% endif %}
+
+{% endfor %}
+
+{% endif %}
+
+
+near.sort(function(a, b){return a - b});/near.push("item1 is full")
+
+//alert(near[0])
+
+ </script> 
+
+ -->
+ <!-----------------------------======================--->
+
+
+
+<!---------------------------------->
+
+
+  <div id="map" class=maps ></div>
+
+
+
+
+
+
+
+    <script>
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: {lat: {{store_details[1]}}, lng: {{store_details[2]}} } 
+        });
+
+        setMarkers(map);
+      }
+
+  
+      var beaches = {{ markers2|safe }};
+
+      function setMarkers(map) {
+       
+        var image = {
+          url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          size: new google.maps.Size(20, 32),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(0, 32)
+        };
+        
+        var shape = {
+          coords: [1, 1, 1, 20, 18, 20, 18, 1],
+          type: 'poly'
+        };
+        for (var i = 0; i < beaches.length; i++) {
+          var beach = beaches[i];
+          var marker = new google.maps.Marker({
+            position: {lat: beach[1], lng: beach[2]},
+            map: map,
+        icon: image,
+            shape: shape,
+            title: beach[0],
+            zIndex: beach[3]
+          });
+        }
+        
+        
+
+        var beachMarker = new google.maps.Marker({
+          position: {lat: {{store_details[1]}}, lng: {{store_details[2]}}},
+          map: map,
+          //icon: image
+
+            
+        });
+        
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5_l12Osmu8lBSBccXG8X82v56tacOxxE&callback=initMap">
+    </script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
